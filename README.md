@@ -10,7 +10,7 @@
 
 ## 🚀 Overview
 
-The **School Management App** is a full-stack project built with **Next.js 13 (App Router)**, **MySQL**, and **Cloudinary**.  
+The **School Management App** is a full-stack project built with **Next.js 15 (App Router)**, **MySQL**, and **Cloudinary**.  
 It allows users to **add, view, and manage schools** with modern UI, image upload support, and validation.  
 
 This project demonstrates **backend integration, database management, image storage, and clean UI development** — ideal for production-ready applications.
@@ -29,17 +29,9 @@ This project demonstrates **backend integration, database management, image stor
 
 ---
 
-## 🖼️ Screenshots
-
-| Landing Page | Add School | Show Schools |
-|--------------|------------|--------------|
-| ![Landing](https://via.placeholder.com/350x200?text=Landing+Page) | ![Add School](https://via.placeholder.com/350x200?text=Add+School) | ![Show Schools](https://via.placeholder.com/350x200?text=Show+Schools) |
-
----
-
 ## 🛠️ Tech Stack
 
-- **Frontend:** Next.js 13 (App Router), React, Tailwind CSS  
+- **Frontend:** Next.js 15 (App Router), React, Tailwind CSS  
 - **Backend:** Next.js API Routes  
 - **Database:** MySQL (Railway)  
 - **Storage:** Cloudinary (for images)  
@@ -50,28 +42,27 @@ This project demonstrates **backend integration, database management, image stor
 
 ## 📂 Project Structure
 
+```bash
 school-app/
 │── app/
-│ ├── api/
-│ │ ├── addSchool/route.js # POST route for adding schools
-│ │ └── getSchools/route.js # GET route for fetching schools
-│ ├── add-school/page.js # Add School form
-│ ├── show-school/page.js # Display schools
-│ ├── layout.js # Layout with Navbar
-│ └── page.js # Landing page
+│   ├── api/
+│   │   ├── addSchool/route.js     # POST route for adding schools
+│   │   └── getSchools/route.js    # GET route for fetching schools
+│   ├── add-school/page.js         # Add School form
+│   ├── show-school/page.js        # Display schools
+│   ├── layout.js                  # Layout with Navbar
+│   └── page.js                    # Landing page
 │
 │── components/
-│ └── Navbar.js # Navigation bar
+│   └── Navbar.js                  # Navigation bar
 │
 │── lib/
-│ └── db.js # MySQL connection
+│   └── db.js                      # MySQL connection
 │
-│── public/ # Static assets
-│── .env.local # Environment variables
+│── public/                        # Static assets
+│── .env.local                     # Environment variables
 │── README.md
-
-
----
+```
 
 ## 🗄️ Database Schema
 
@@ -87,7 +78,6 @@ school-app/
 | contact      | VARCHAR(15) | NOT NULL |
 | email_id     | VARCHAR(100) | NOT NULL |
 | image_url    | TEXT       | (Stored in Cloudinary) |
-| created_at   | TIMESTAMP  | DEFAULT CURRENT_TIMESTAMP |
 
 ---
 
@@ -95,16 +85,24 @@ school-app/
 
 ### ➕ Add School
 `POST /api/addSchool`
+### ➕ Get Schools
+`GET /api/getSchool`
 
-### env variables
+### 🔑 Environment Variables  
+
+Create a `.env.local` file in the root of your project and add the following:  
+
+```env
 # MySQL Database (Railway)
-DATABASE_HOST=your-database-host
-DATABASE_PORT=your-database-port
-DATABASE_USER=your-database-username
-DATABASE_PASSWORD=your-database-password
-DATABASE_NAME=your-database-name
+DATABASE_HOST=your-database-host  
+DATABASE_PORT=your-database-port  
+DATABASE_USER=your-database-username  
+DATABASE_PASSWORD=your-database-password  
+DATABASE_NAME=your-database-name  
 
 # Cloudinary (Image Storage)
-CLOUDINARY_NAME=your-cloudinary-cloud-name
-CLOUDINARY_API_KEY=your-cloudinary-api-key
-CLOUDINARY_API_SECRET=your-cloudinary-api-secret
+CLOUDINARY_NAME=your-cloudinary-cloud-name  
+CLOUDINARY_API_KEY=your-cloudinary-api-key  
+CLOUDINARY_API_SECRET=your-cloudinary-api-secret  
+```
+
