@@ -19,7 +19,7 @@ export default function ShowSchools() {
         {schools.length>0 && schools.map((school) => (
           <div
             key={school.id}
-            className="border rounded-xl shadow p-4 bg-white"
+            className="bg-white p-4 rounded-xl shadow hover:shadow-xl hover:scale-105 transform transition-all duration-300 cursor-pointer"
           >
             <img
                 src={school.image}
