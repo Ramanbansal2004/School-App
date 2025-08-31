@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 School Management App
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-13-black?logo=next.js)](https://nextjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-005C84?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?logo=cloudinary&logoColor=white)](https://cloudinary.com/)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://vercel.com/)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The **School Management App** is a full-stack project built with **Next.js 13 (App Router)**, **MySQL**, and **Cloudinary**.  
+It allows users to **add, view, and manage schools** with modern UI, image upload support, and validation.  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project demonstrates **backend integration, database management, image storage, and clean UI development** — ideal for production-ready applications.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- ➕ **Add Schools**: Insert details like name, address, city, state, contact, email, and school image.  
+- 🏫 **Show Schools**: View all added schools in a **responsive card layout** with hover effects.  
+- ☁️ **Image Uploads**: Upload images directly to **Cloudinary** with preview before submission.  
+- ✅ **Form Validation**: Powered by `react-hook-form` (contact must be numeric, email format checked, required fields).  
+- 🔄 **Loading States**: Submitting shows a **spinner** with feedback.  
+- 🎨 **Modern UI**: Tailwind CSS with responsive design.  
+- ⚡ **Full-Stack Ready**: MySQL integration via Railway & deployed on Vercel.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🖼️ Screenshots
 
-## Deploy on Vercel
+| Landing Page | Add School | Show Schools |
+|--------------|------------|--------------|
+| ![Landing](https://via.placeholder.com/350x200?text=Landing+Page) | ![Add School](https://via.placeholder.com/350x200?text=Add+School) | ![Show Schools](https://via.placeholder.com/350x200?text=Show+Schools) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 13 (App Router), React, Tailwind CSS  
+- **Backend:** Next.js API Routes  
+- **Database:** MySQL (Railway)  
+- **Storage:** Cloudinary (for images)  
+- **Form Handling:** React Hook Form  
+- **Deployment:** Vercel  
+
+---
+
+## 📂 Project Structure
+
+school-app/
+│── app/
+│ ├── api/
+│ │ ├── addSchool/route.js # POST route for adding schools
+│ │ └── getSchools/route.js # GET route for fetching schools
+│ ├── add-school/page.js # Add School form
+│ ├── show-school/page.js # Display schools
+│ ├── layout.js # Layout with Navbar
+│ └── page.js # Landing page
+│
+│── components/
+│ └── Navbar.js # Navigation bar
+│
+│── lib/
+│ └── db.js # MySQL connection
+│
+│── public/ # Static assets
+│── .env.local # Environment variables
+│── README.md
+
+
+---
+
+## 🗄️ Database Schema
+
+**Table: `schools`**
+
+| Column       | Type        | Constraints        |
+|--------------|------------|--------------------|
+| id           | INT        | Primary Key, Auto Increment |
+| name         | VARCHAR(255) | NOT NULL |
+| address      | TEXT       | NOT NULL |
+| city         | VARCHAR(100) | NOT NULL |
+| state        | VARCHAR(100) | NOT NULL |
+| contact      | VARCHAR(15) | NOT NULL |
+| email_id     | VARCHAR(100) | NOT NULL |
+| image_url    | TEXT       | (Stored in Cloudinary) |
+| created_at   | TIMESTAMP  | DEFAULT CURRENT_TIMESTAMP |
+
+---
+
+## 📡 API Endpoints
+
+### ➕ Add School
+`POST /api/addSchool`
+
+### env variables
+# MySQL Database (Railway)
+DATABASE_HOST=your-database-host
+DATABASE_PORT=your-database-port
+DATABASE_USER=your-database-username
+DATABASE_PASSWORD=your-database-password
+DATABASE_NAME=your-database-name
+
+# Cloudinary (Image Storage)
+CLOUDINARY_NAME=your-cloudinary-cloud-name
+CLOUDINARY_API_KEY=your-cloudinary-api-key
+CLOUDINARY_API_SECRET=your-cloudinary-api-secret
